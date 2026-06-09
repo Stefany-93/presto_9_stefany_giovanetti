@@ -2,16 +2,15 @@
 
 namespace App\Jobs;
 
+namespace App\Jobs;
+
 use App\Models\Image;
 use Google\Cloud\Vision\V1\Feature;
 use Google\Cloud\Vision\V1\Feature\Type;
 use Google\Cloud\Vision\V1\AnnotateImageRequest;
 use Google\Cloud\Vision\V1\BatchAnnotateImagesRequest;
-use Illuminate\Bus\Queueable;
+use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 use Spatie\Image\Enums\Fit;
 use Spatie\Image\Image as SpatieImage;
 use Google\Cloud\Vision\V1\Image as VisionImage;
@@ -20,7 +19,7 @@ use Spatie\Image\Enums\AlignPosition;
 
 class RemoveFaces implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Queueable;
 
     private $article_image_id;
 
